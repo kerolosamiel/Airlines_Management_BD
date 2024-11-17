@@ -1,7 +1,6 @@
 Use AirlineCompany
 GO
 
-Select * from AirlinePhones
 -- Insert data into Airlines table
 INSERT INTO [Airlines] VALUES
 (1, 'Skyline Airways', '123 Aviation Blvd, New York, NY', 'John Doe'),
