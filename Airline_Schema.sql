@@ -19,7 +19,7 @@ GO
 -- Create the AirlinePhones table to store multiple phone numbers for each airline
 Create Table [AirlinePhones] (
     [AirlineID] int, -- Foreign key referencing the Airlines table
-    [Phone] int,
+    [Phone] varchar(50),
     CONSTRAINT [PK_Airline_Phones] PRIMARY KEY (AirlineID, Phone),  -- Composite primary key
     CONSTRAINT [FK_Airline] FOREIGN KEY (AirlineID) REFERENCES Airlines(AirlineID) -- Foreign key constraint
 )
@@ -29,9 +29,9 @@ GO
 Create Table [Employees] (
     [EmployeeID] int, -- Unique identifier for the employee
     [Name] varchar(50),
-    [Day]  date,
-    [Month] date,
-    [Year]  date,
+    [Day]  int,
+    [Month] int,
+    [Year]  int,
     [Position] varchar(50),
     [Gender]   varchar(1), -- Gender of the employee (e.g., M/F)
     [AirlineID] int, -- Foreign key referencing the airline the employee works for
@@ -80,7 +80,7 @@ GO
 -- Create the Routes table to store information about flight routes
 Create Table [Routes] (
     [RouteID] int, -- Unique identifier for the route
-    [Distance] decimal(5, 2),
+    [Distance] decimal(10, 2),
     [Origin] varchar(100), -- Starting point of the route
     [Destination] varchar(200),
     [Classification] varchar(100),
